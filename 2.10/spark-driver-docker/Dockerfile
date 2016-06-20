@@ -1,6 +1,6 @@
-FROM anchormen/spark
+FROM anchormen/spark:1.6.1_2.10
 
-MAINTAINER m.sioufy@anchormen.nl
+MAINTAINER Mohamed ElSioufy <m.sioufy@anchormen.nl>
 
 COPY app.jar /opt/app.jar
 

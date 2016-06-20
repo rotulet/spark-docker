@@ -1,11 +1,12 @@
 FROM ubuntu:14.04
 
 
-MAINTAINER m.sioufy@anchormen.nl
+MAINTAINER Mohamed ElSioufy <m.sioufy@anchormen.nl>
 
 
 ####installing [software-properties-common] so that we can use [apt-add-repository] to install Java8
-RUN apt-get install software-properties-common -y \
+RUN apt-get update -y \
+&&  apt-get install software-properties-common -y \
 &&  apt-add-repository ppa:webupd8team/java -y \
 &&  apt-get update -y \
 

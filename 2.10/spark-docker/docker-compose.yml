@@ -10,14 +10,14 @@ version: '2'
 services:
   master:
     build: .
-    image: anchormen/spark
+    image: anchormen/spark:1.6.1_2.10
     container_name: master
     ports:
       - "8080:8080"
     command: ["/usr/bin/supervisord", "--configuration=/opt/conf/master.conf"]
 #---------------------------------------
   slave:
-    image: anchormen/spark
+    image: anchormen/spark:1.6.1_2.10
     depends_on:
       - master
     command: ["/usr/bin/supervisord", "--configuration=/opt/conf/slave.conf"]
