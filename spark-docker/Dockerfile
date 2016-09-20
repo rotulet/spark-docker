@@ -1,7 +1,8 @@
-FROM debian:8.5
+FROM debian:8.6
 
 
 MAINTAINER m.sioufy@anchormen.nl
+MAINTAINER rotulet@gmail.com
 
 
 ####installing [software-properties-common] so that we can use [apt-add-repository] to install Java8
@@ -28,8 +29,8 @@ RUN wget http://apache.crihan.fr/dist/spark/spark-1.6.1/spark-1.6.1-bin-hadoop2.
 #####adding conf files [to be used by supervisord for running spark master/slave]
 COPY master.conf /opt/conf/master.conf
 COPY slave.conf /opt/conf/slave.conf
-COPY log4j.properties /opt/spark/conf/log4j.properties
-
+# copy log4j.properties
+COPY log4j.properties /opt/spark/conf/
 
 #######exposing port 8080 for spark master UI
 EXPOSE 8080
